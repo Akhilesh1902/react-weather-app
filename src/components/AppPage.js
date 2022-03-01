@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Conditions from "./Conditions";
 
 function AppPage() {
-  console.log("app page");
   const API_KEY = "51147ce8e369eb234ad7e52e15a363e4";
 
   const [responseOBJ, setResponseOBJ] = useState({});
@@ -15,7 +14,6 @@ function AppPage() {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
     )
       .then((res) => {
-        console.log(res);
         return res.json();
       })
       .then((res) => {
@@ -33,11 +31,9 @@ function AppPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (city.length === 0) return seterror(true);
-    console.log(city);
     seterror(false);
     setResponseOBJ({});
     setloading(true);
-    // const element =
     document.querySelector(
       `.app-container`
     ).style.backgroundImage = `url("https://source.unsplash.com/random/?${city}")`;
@@ -48,7 +44,7 @@ function AppPage() {
       <div>
         <form className="app-form" onSubmit={handleSubmit}>
           <div>
-            <label>Enter a city name</label>
+            <label>Enter a City Name</label>
             <input
               value={city}
               onChange={(e) => {
@@ -64,7 +60,7 @@ function AppPage() {
         </form>
         {responseOBJ && (
           <div className="forcast-container">
-            {responseOBJ.cod === 200 && (
+            {responseOBJ && (
               <Conditions
                 responseOBJ={responseOBJ}
                 error={error}
