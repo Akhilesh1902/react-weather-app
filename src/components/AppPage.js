@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Conditions from "./Conditions";
 
 function AppPage() {
@@ -11,8 +11,7 @@ function AppPage() {
   const [loading, setloading] = useState(false);
 
   function getForecast(city) {
-    console.log("getting forecast");
-    const data = fetch(
+    fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
     )
       .then((res) => {
