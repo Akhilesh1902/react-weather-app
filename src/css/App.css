@@ -1,0 +1,118 @@
+@import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter:wght@300;400;600&display=swap");
+
+/*
+font-family: 'Bebas Neue', cursive;
+font-family: 'Bitter', serif;
+*/
+
+:root {
+  --font-clr: 0 0% 96%;
+}
+
+body {
+  font-family: "Bitter", serif;
+  color: hsl(var(--font-clr));
+}
+
+.landing-page-container {
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+  text-align: center;
+  background-image: url("https://source.unsplash.com/random/?nature,forest");
+  background-color: rgb(24, 39, 26);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-page-container h1 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: 0.1ch;
+  word-spacing: 0.2em;
+}
+
+.landing-page-container p {
+  letter-spacing: 0.5ch;
+  font-weight: 300;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  color: var(--font-clr);
+  background: hsl(var(--font-clr) / 0.2);
+  border-radius: 0.3em;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.landing-page-container a:hover,
+.landing-page-container a:focus {
+  transform: scale(1.1);
+  background: rgba(54, 108, 54, 0.763);
+  font-weight: 500;
+}
+
+.app-container {
+  background-image: url("https://source.unsplash.com/random/?nature,forest");
+  background-color: rgba(47, 61, 53, 0.838);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-container > div {
+  width: 40vw;
+  margin-top: 2em;
+  height: fit-content;
+  padding: 2rem;
+  background-color: rgba(11, 14, 36, 0.637);
+  border-radius: 0.5em;
+}
+@media screen and (max-width: 790px) {
+  .app-container > div {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .app-container > div {
+    width: 600px;
+  }
+}
+.app-form {
+  display: flex;
+  flex-direction: column;
+}
+.app-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.app-form label {
+  font-size: 2rem;
+}
+.app-form input {
+  border: none;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.app-form input:focus {
+  outline: none;
+}
+.forcast-container {
+  margin-top: 1em;
+}
+.forecast-content strong {
+  font-size: 2em;
+}
